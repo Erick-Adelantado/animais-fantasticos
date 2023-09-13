@@ -1,7 +1,8 @@
 import AnimaNumeros from './anima-numeros.js';
 
 export default function fetchAnimais(url, target) {
-  // Cria a div contendo informações com o total de animais
+  // Cria a div contendo informações
+  // com o total de animais
   function createAnimal(animal) {
     const div = document.createElement('div');
     div.classList.add('numero-animal');
@@ -29,10 +30,10 @@ export default function fetchAnimais(url, target) {
       // Fetch, espera a resposta e transforma em json
       const animaisResponse = await fetch(url);
       const animaisJSON = await animaisResponse.json();
-      // Após a transformação de json, ativa as funções para preencher e animar os numeros
-      animaisJSON.forEach((animal) => {
-        preencherAnimais(animal);
-      });
+
+      // Após a transformação de json, ativa as funções
+      // para preencher e animar os números
+      animaisJSON.forEach(animal => preencherAnimais(animal));
       animaAnimaisNumeros();
     } catch (erro) {
       console.log(erro);
